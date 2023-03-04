@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //player input place
+        let playerSelection = prompt('enter rock, paper or scissors','');
+        //computer randomly select a gesture 
+        var gestures=['rock','paper','scissors'];
+        var computerSelection = computerChoice();
+        function computerChoice() {
+            const rand=Math.floor(Math.random()*gestures.length);
+            return gestures[rand];
+        }
+        //comparison of player and computer and output the result
+        function playRound(playerSelection,  ){
+            if(playerSelection == computerSelection){
+                return ('tie');
+            }else if(playerSelection='rock'&& computerSelection == 'paper' ){
+                return('you lose paper beats rock');
+            }else if(playerSelection='rock'&& computerSelection =='scissors'){
+                return('you won rock beats scissors');
+            }else if(playerSelection='paper'&& computerSelection=='scissors'){
+                return('you lose scissors beats paper');
+            }else if(playerSelection='paper'&& computerSelection=='rock'){
+                return('you won paper beats rock');
+            }else if(playerSelection='scissors'&& computerSelection=='rock'){
+                return('you lose scissors beats rock');
+            }else if(playerSelection='scissors'&& computerSelection=='paper'){
+                return('you won scissors beats paper');
+            }
+        }
+        //the selected gestures and result
+        console.log(playerSelection,computerSelection);
+        console.log(playRound(playerSelection,computerSelection));   
+    </script>
+</body>
+</html>
